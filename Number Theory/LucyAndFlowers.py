@@ -12,8 +12,6 @@ mod_fact_inv = []
 nCr_arr = []
 
 def memodict(f):
-    """ Memoization decorator for a function taking a single argument """
-    # http://code.activestate.com/recipes/578231-probably-the-fastest-memoization-decorator-in-the-/
     class memodict(dict):
         def __missing__(self, key):
             ret = self[key] = f(key)
@@ -21,8 +19,6 @@ def memodict(f):
     return memodict().__getitem__
 
 def modularInverse( n) :
-# Moulo inverse 1 to n
-# https://www.geeksforgeeks.org/modular-multiplicative-inverse-1-n/
 
     dp =[0]*(n+1)
     dp[0] = dp[1] = 1
